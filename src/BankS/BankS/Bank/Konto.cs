@@ -8,7 +8,7 @@ namespace BankS.Bank
 {
     public abstract class Konto
     {
-        string nrkonta;
+        string nrkonta = string.Empty;
         decimal saldo;
 
         public string NrKonta
@@ -57,5 +57,6 @@ namespace BankS.Bank
             Saldo -= kwota;
         }
 
+        public abstract void Wyswietl();
     }
 }
