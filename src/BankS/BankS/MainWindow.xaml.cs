@@ -52,5 +52,7 @@ namespace BankS
             MessageBox.Show("Wczytano z pliku XML");
         }
 
+
+
     }
 }

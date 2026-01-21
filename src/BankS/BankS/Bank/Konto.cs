@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BankS.Bank.Wyjatki;
 
 namespace BankS.Bank
 {
@@ -53,7 +54,7 @@ namespace BankS.Bank
                 throw new ArgumentException("Kwota musi być dodatnia");
 
             if (kwota > Saldo)
-                throw new ArgumentException("Brak środków");
+                throw new BrakFund();
 
             Saldo -= kwota;
         }
