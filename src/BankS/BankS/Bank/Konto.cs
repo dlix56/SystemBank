@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankS.Bank
 {
+    [Serializable]
     public abstract class Konto
     {
         string nrkonta = string.Empty;

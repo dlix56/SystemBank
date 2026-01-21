@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankS.Bank
 {
+    [Serializable]
     public class KontoOszczednosc : Konto
     {
         decimal procent;

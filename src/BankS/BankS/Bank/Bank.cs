@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace BankS.Bank
 {
@@ -38,5 +40,20 @@ namespace BankS.Bank
                 konto.Wyswietl();
             }
         }
+
+        public void ZapiszDoPliku(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Konto>));
+            using FileStream fs = new FileStream(path, FileMode.Create);
+            serializer.Serialize(fs, konta);
+        }
+
+        public void WczytajZPliku(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Konto>));
+            using FileStream fs = new FileStream(path, FileMode.Open);
+            konta = (List<Konto>)serializer.Deserialize(fs)!;
+        }
+
     }
 }

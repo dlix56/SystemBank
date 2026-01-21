@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BankS.Bank;
 
 namespace BankS
 {
@@ -16,9 +17,40 @@ namespace BankS
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BankS.Bank.Bank bank = new BankS.Bank.Bank();
+
+
         public MainWindow()
         {
             InitializeComponent();
+
+            bank.AddKonto(new KontoOsobiste("1234567890", 1000));
+            bank.AddKonto(new KontoOszczednosc("9876543210", 5000, 3.5m));
+
+            //bank.WyswietlAll();
         }
+
+        private void PokazKonta_Click(object sender, RoutedEventArgs e)
+        {
+            OutputBox.Text = "";
+
+            foreach (var konto in bank.Konta)
+            {
+                OutputBox.Text += $"{konto.NrKonta} | {konto.Saldo} zł\n";
+            }
+        }
+
+        private void Zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            bank.ZapiszDoPliku("bank.xml");
+            MessageBox.Show("Zapisano do pliku XML");
+        }
+
+        private void Wczytaj_Click(object sender, RoutedEventArgs e)
+        {
+            bank.WczytajZPliku("bank.xml");
+            MessageBox.Show("Wczytano z pliku XML");
+        }
+
     }
 }
