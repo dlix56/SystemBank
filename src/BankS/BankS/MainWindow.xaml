@@ -31,14 +31,17 @@
         </Style>
     </Window.Resources>
 
-    <ScrollViewer>
-        <StackPanel Margin="20">
+    <ScrollViewer HorizontalAlignment="Left" Width="800">
+        <StackPanel x:Name="Banki" Margin="20" Width="731">
 
             <TextBlock Text="Numer konta"/>
             <TextBox Name="NrKontaBox"/>
 
             <TextBlock Text="Saldo początkowe"/>
             <TextBox Name="SaldoBox"/>
+
+            <TextBlock Text="Kwota do wypłaty"/>
+            <TextBox Name="KwotaBox"/>
 
             <TextBlock Text="Typ konta"/>
             <ComboBox Name="TypKontaBox">

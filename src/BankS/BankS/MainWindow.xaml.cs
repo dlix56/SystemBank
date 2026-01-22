@@ -102,10 +102,20 @@ namespace BankS
         {
             try
             {
-                var konto = bank.ZnajdzNumer("1234567890");
-                konto!.Wyplac(5000);
+                var konto = bank.ZnajdzNumer(NrKontaBox.Text);
+
+                if (konto == null)
+                {
+                    MessageBox.Show("Nie znaleziono konta");
+                    return;
+                }
+
+                decimal kwota = decimal.Parse(KwotaBox.Text);
+                konto.Wyplac(kwota);
+
+                PokazKonta_Click(sender, e);
             }
-            catch (BrakFund ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
