@@ -24,11 +24,20 @@ namespace BankS
         public MainWindow()
         {
             InitializeComponent();
+            var konto = new KontoOsobiste("1234567890", 1000);
 
-            bank.AddKonto(new KontoOsobiste("1234567890", 1000));
-            bank.AddKonto(new KontoOszczednosc("9876543210", 5000, 3.5m));
+            konto.OperacjaWykonana += Konto_OperacjaWykonana;
+
+            bank.AddKonto(konto);
+            //bank.AddKonto(new KontoOsobiste("1234567890", 1000));
+            //bank.AddKonto(new KontoOszczednosc("9876543210", 5000, 3.5m));
 
             //bank.WyswietlAll();
+        }
+        private void Konto_OperacjaWykonana(Konto konto, decimal kwota)
+        {
+            string typ = kwota > 0 ? "Wpłata" : "Wypłata";
+            MessageBox.Show($"{typ}: {Math.Abs(kwota)} zł\nSaldo: {konto.Saldo} zł");
         }
 
         private void PokazKonta_Click(object sender, RoutedEventArgs e)
