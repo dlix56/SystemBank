@@ -21,6 +21,37 @@ namespace BankS
         private BankS.Bank.Bank bank = new BankS.Bank.Bank();
 
 
+        private void DodajKonto_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string nr = NrKontaBox.Text;
+                decimal saldo = decimal.Parse(SaldoBox.Text);
+                string typ = (TypKontaBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+
+                Konto konto;
+
+                if (typ == "Osobiste")
+                {
+                    konto = new KontoOsobiste(nr, saldo);
+                }
+                else
+                {
+                    konto = new KontoOszczednosc(nr, saldo, 3.5m);
+                }
+
+                konto.OperacjaWykonana += Konto_OperacjaWykonana;
+
+                bank.AddKonto(konto);
+
+                MessageBox.Show("Dodano konto");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
