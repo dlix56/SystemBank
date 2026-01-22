@@ -5,47 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel Margin="20">
-        <TextBlock Text="Numer konta"/>
-        <TextBox Name="NrKontaBox"/>
+        Title="System zarządzania bankiem"
+        Height="500"
+        Width="800"
+        Background="#FFF8FB">
 
-        <TextBlock Text="Saldo początkowe" Margin="0,10,0,0"/>
-        <TextBox Name="SaldoBox"/>
+    <Window.Resources>
+        <SolidColorBrush x:Key="PinkMain" Color="#FF69B4"/>
+        <SolidColorBrush x:Key="PinkLight" Color="#FFF0F5"/>
 
-        <TextBlock Text="Typ konta" Margin="0,10,0,0"/>
-        <ComboBox Name="TypKontaBox">
-            <ComboBoxItem Content="Osobiste"/>
-            <ComboBoxItem Content="Oszczędnościowe"/>
-        </ComboBox>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PinkMain}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="0,6,0,0"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
 
-        <Button Content="Dodaj konto"
-            Margin="0,10,0,0"
-            Click="DodajKonto_Click"/>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,6,0,0"/>
+            <Setter Property="Background" Value="{StaticResource PinkLight}"/>
+        </Style>
 
-        <Button Content="Pokaż konta"
-            Margin="0,10,0,0"
-            Click="PokazKonta_Click"/>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,6,0,0"/>
+        </Style>
+    </Window.Resources>
 
-        <TextBox Name="OutputBox"
-             Height="200"
-             Margin="0,10,0,0"
-             AcceptsReturn="True"/>
-        <Button Content="Pokaz konta" Click="PokazKonta_Click"/>
-        <TextBox Name="Outputb"
-             Height="200"
-             Margin="0,10,0,0"
-             AcceptsReturn="True"/>
-        <Button Content="Pokaż konta (sortuj po saldzie)"
-        Margin="0,10,0,0"
-        Click="Sortuj_Click"/>
+    <ScrollViewer>
+        <StackPanel Margin="20">
 
-        <Button Content="Zapisz do XML" Click="Zapisz_Click" Margin="0,10,0,0"/>
-        <Button Content="Wczytaj z XML" Click="Wczytaj_Click"/>
-        <Button Content="Wypłać z konta"
-        Margin="0,10,0,0"
-        Click="Wyplac_Click"/>
+            <TextBlock Text="Numer konta"/>
+            <TextBox Name="NrKontaBox"/>
 
-    </StackPanel>
+            <TextBlock Text="Saldo początkowe"/>
+            <TextBox Name="SaldoBox"/>
+
+            <TextBlock Text="Typ konta"/>
+            <ComboBox Name="TypKontaBox">
+                <ComboBoxItem Content="Osobiste"/>
+                <ComboBoxItem Content="Oszczędnościowe"/>
+            </ComboBox>
+
+            <Button Content="Dodaj konto" Click="DodajKonto_Click"/>
+            <Button Content="Pokaż konta" Click="PokazKonta_Click"/>
+            <Button Content="Pokaż konta (sortuj po saldzie)" Click="Sortuj_Click"/>
+            <Button Content="Wypłać z konta" Click="Wyplac_Click"/>
+            <Button Content="Zapisz do XML" Click="Zapisz_Click"/>
+            <Button Content="Wczytaj z XML" Click="Wczytaj_Click"/>
+
+            <TextBlock Text="Dane kont:" Margin="0,15,0,0"/>
+            <TextBox Name="OutputBox"
+                     Height="200"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"/>
+
+        </StackPanel>
+    </ScrollViewer>
 
 </Window>
