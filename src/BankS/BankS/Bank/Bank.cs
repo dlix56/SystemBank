@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
+using System.Linq;
 
 namespace BankS.Bank
 {
@@ -55,5 +56,9 @@ namespace BankS.Bank
             konta = (List<Konto>)serializer.Deserialize(fs)!;
         }
 
+        public IEnumerable<Konto> PobierzSortowane()
+        {
+            return konta.OrderBy(k => k.Saldo);
+        }
     }
 }

@@ -8,7 +8,7 @@ using BankS.Bank.Wyjatki;
 namespace BankS.Bank
 {
     [Serializable]
-    public abstract class Konto
+    public abstract class Konto : IComparable<Konto>
     {
         string nrkonta = string.Empty;
         decimal saldo;
@@ -60,5 +60,11 @@ namespace BankS.Bank
         }
 
         public abstract void Wyswietl();
+
+        public int CompareTo(Konto? other)
+        {
+            if (other == null) return 1;
+            return Saldo.CompareTo(other.Saldo);
+        }
     }
 }

@@ -67,5 +67,15 @@ namespace BankS
 
         }
 
+        private void Sortuj_Click(object sender, RoutedEventArgs e)
+        {
+            OutputBox.Text = "";
+
+            foreach (var konto in bank.PobierzSortowane())
+            {
+                OutputBox.Text += $"{konto.NrKonta} | {konto.Saldo} zł\n";
+            }
+        }
+
     }
 }
