@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BankS.Bank;
+using BankS.Bank.Wyjatki;
 
 namespace BankS
 {
@@ -52,7 +53,19 @@ namespace BankS
             MessageBox.Show("Wczytano z pliku XML");
         }
 
+        private void Wyplac_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var konto = bank.ZnajdzNumer("1234567890");
+                konto!.Wyplac(5000);
+            }
+            catch (BrakFund ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+        }
 
     }
 }

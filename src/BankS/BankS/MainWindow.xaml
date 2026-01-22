@@ -15,6 +15,9 @@
 
         <Button Content="Zapisz do XML" Click="Zapisz_Click" Margin="0,10,0,0"/>
         <Button Content="Wczytaj z XML" Click="Wczytaj_Click"/>
+        <Button Content="Wypłać z konta"
+        Margin="0,10,0,0"
+        Click="Wyplac_Click"/>
 
     </StackPanel>
 
