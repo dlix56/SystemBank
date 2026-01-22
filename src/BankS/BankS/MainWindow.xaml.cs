@@ -29,6 +29,11 @@ namespace BankS
             konto.OperacjaWykonana += Konto_OperacjaWykonana;
 
             bank.AddKonto(konto);
+
+
+            var konto2 = new KontoOszczednosc("9876543210", 5000, 3.5m);
+            konto2.OperacjaWykonana += Konto_OperacjaWykonana;
+            bank.AddKonto(konto2);
             //bank.AddKonto(new KontoOsobiste("1234567890", 1000));
             //bank.AddKonto(new KontoOszczednosc("9876543210", 5000, 3.5m));
 
