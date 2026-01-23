@@ -53,6 +53,7 @@
             <Button Content="Pokaż konta" Click="PokazKonta_Click"/>
             <Button Content="Pokaż konta (sortuj po saldzie)" Click="Sortuj_Click"/>
             <Button Content="Wypłać z konta" Click="Wyplac_Click"/>
+            <Button Content="Wpłać na konto" Click="Wplac_Click"/>
             <Button Content="Zapisz do XML" Click="Zapisz_Click"/>
             <Button Content="Wczytaj z XML" Click="Wczytaj_Click"/>
 

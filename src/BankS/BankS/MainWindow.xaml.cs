@@ -60,15 +60,20 @@ namespace BankS
             konto.OperacjaWykonana += Konto_OperacjaWykonana;
 
             bank.AddKonto(konto);
+            var konto3 = new KontoOsobiste("123545450", 1655000);
 
+            konto3.OperacjaWykonana += Konto_OperacjaWykonana;
+
+            bank.AddKonto(konto3);
 
             var konto2 = new KontoOszczednosc("9876543210", 5000, 3.5m);
             konto2.OperacjaWykonana += Konto_OperacjaWykonana;
             bank.AddKonto(konto2);
-            //bank.AddKonto(new KontoOsobiste("1234567890", 1000));
-            //bank.AddKonto(new KontoOszczednosc("9876543210", 5000, 3.5m));
 
-            //bank.WyswietlAll();
+
+            var konto4 = new KontoOszczednosc("9875656650", 6000, 4m);
+            konto4.OperacjaWykonana += Konto_OperacjaWykonana;
+            bank.AddKonto(konto4);
         }
         private void Konto_OperacjaWykonana(Konto konto, decimal kwota)
         {
@@ -121,6 +126,29 @@ namespace BankS
             }
 
         }
+        private void Wplac_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var konto = bank.ZnajdzNumer(NrKontaBox.Text);
+
+                if (konto == null)
+                {
+                    MessageBox.Show("Nie znaleziono konta");
+                    return;
+                }
+
+                decimal kwota = decimal.Parse(KwotaBox.Text);
+                konto.Wplac(kwota);
+
+                PokazKonta_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void Sortuj_Click(object sender, RoutedEventArgs e)
         {
