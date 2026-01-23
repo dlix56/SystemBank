@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BankS.Bank.Wyjatki.BrakFund">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bank\Wyjatki\BrakFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankS.Bank.Bank">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAIAAAEAQAAAAEAAAAAAAAEAIAAAACAAAA=</HashCode>
+      <FileName>Bank\Bank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankS.Bank.Konto">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAEAAQABAAEAAAAAgAAAACAAAIAAAACAAA=</HashCode>
+      <FileName>Bank\Konto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BankS.Bank.KontoOsobiste">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bank\KontoOsobiste.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankS.Bank.KontoOszczednosc">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAEABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bank\KontoOszczednosc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankS.MainWindow">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAQIEAAAAAAAAAACAAAAAAIAAEAAACAIAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Delegate Name="BankS.Bank.OperacjaKonto">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Bank\Konto.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
